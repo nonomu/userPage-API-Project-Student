@@ -9,7 +9,8 @@ class APIManager {
             type: 'GET', 
             url: 'https://randomuser.me/api/?results=7',  
             success: (data) => {
-                this.data.mainUser=data.results.map(r => { return{name : r.name , picture : r.picture.thumbnail}
+                this.data.mainUser=data.results.map(r => 
+                    { return{name : r.name , picture : r.picture.thumbnail ,location: {city:r.location.city , country: r.location.country}}
                 })
                 this.data.friends= this.data.mainUser.splice(1)
               }

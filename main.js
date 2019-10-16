@@ -7,9 +7,14 @@
 // //lorem Impsum : https://baconipsum.com/api/?type=nana
 // console.log(user)
 // console.log(user.results[0].name)
-
-
-
 const apiCall = new APIManager()
-apiCall.loadData()
-console.log(apiCall.data)
+const render = new Renderer()
+
+
+$("#load").click(function () {
+    apiCall.loadData()
+})
+
+$("#display").click(function () {
+    render.render(apiCall.data)
+})
