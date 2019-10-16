@@ -19,7 +19,10 @@ class Renderer {
     }
 
     _renderPokemon(pokemonInfo) {
-
+        let source = $('#pokemon').html()
+        let template = Handlebars.compile(source)
+        let newHTML = template(pokemonInfo)
+        $('.pokemon-container').append(newHTML)
     }
 
     _renderMeat(meatText) {
@@ -30,7 +33,7 @@ class Renderer {
         this._renderUsers(data.mainUser)
         this._renderFriends(data.friends)
         this._renderQuote(data.quote)
-       //this._renderPokemon(data.)
+        this._renderPokemon(data.pokemon)
     }
 }
 
