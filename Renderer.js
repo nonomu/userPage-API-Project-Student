@@ -10,7 +10,7 @@ class Renderer {
     }
 
     _renderQuote(quoteInfo) {
-
+        
     }
 
     _renderPokemon(pokemonInfo) {
@@ -22,7 +22,7 @@ class Renderer {
     }
 
     render(data){
-        //invokes all the individual _render methods
+        
     }
 }
 
