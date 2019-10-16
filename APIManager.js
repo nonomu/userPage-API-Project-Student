@@ -21,5 +21,12 @@ class APIManager {
                 this.data.quote=data.quote
               }
         })
+        $.ajax({ 
+            type: 'GET', 
+            url: 'https://baconipsum.com/api/?type=meat-and-filler',  
+            success: (data) => {
+                this.data.aboutme=data[0]
+              }
+        })
     }
 }
