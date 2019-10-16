@@ -10,8 +10,9 @@ class APIManager {
             type: 'GET', 
             url: 'https://randomuser.me/api/?results=7',  
             success: (data) => {
-                this.data.users=data.results.map(r => { return{name : r.name , picture : r.picture.thumbnail}
+                this.data.mainUser=data.results.map(r => { return{name : r.name , picture : r.picture.thumbnail}
                 })
+                this.data.friends= this.data.mainUser.splice(1)
               }
         })
         $.ajax({ 
@@ -26,6 +27,13 @@ class APIManager {
             url: 'https://baconipsum.com/api/?type=meat-and-filler',  
             success: (data) => {
                 this.data.aboutme=data[0]
+              }
+        })
+        $.ajax({ 
+            type: 'GET', 
+            url: `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * Math.floor(949))}/`,  
+            success: (data) => {
+                this.data.pokemon={name: data.name , picture: data.sprites.front_default }
               }
         })
     }
