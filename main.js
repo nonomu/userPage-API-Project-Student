@@ -16,5 +16,6 @@ $("#load").click(function () {
 })
 
 $("#display").click(function () {
+    
     render.render(apiCall.data)
 })
